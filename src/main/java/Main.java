@@ -16,8 +16,13 @@ public class Main {
 
         BusinessContact contactC = new BusinessContact("Carl", "Coca-Cola");
         BusinessContact contactD = new BusinessContact("Pepsi");
-        Contact[] contactsB = {contactA, contactB, contactC, contactD};
+        Contact[] contactsB = {contactB, contactC, contactD};
         Smartphone phoneB = new Smartphone("710", "Nokia", contactsB);
         System.out.println(phoneB);
+
+        ContactStore allContacts = new ContactStore(contactsB);
+        allContacts.addContact(contactA);
+        Smartphone phoneC = new Smartphone("710", "Nokia", allContacts.getAllContacts());
+        System.out.println(phoneC);
     }
 }
