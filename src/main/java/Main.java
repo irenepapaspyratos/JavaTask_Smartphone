@@ -1,16 +1,23 @@
+import model.BusinessContact;
 import model.Contact;
 import model.Friend;
 
 public class Main {
     public static void main(String[] args) {
-        Friend friendA = new Friend("Hans", "987");
-        Friend friendB = new Friend();
-        System.out.println(friendA);
-        System.out.println(friendB);
+        Friend contactA = new Friend("Hans", "987");
+        Friend contactB = new Friend();
+        System.out.println(contactA);
+        System.out.println(contactB);
 
-        Contact[] contacts = {friendA, new Friend("Henny", "990876")};
-        Smartphone phoneA = new Smartphone("710", "Nokia", contacts);
+        contactB = new Friend("Henny", "990876");
+        Contact[] contactsA = {contactA, contactB};
+        Smartphone phoneA = new Smartphone("710", "Nokia", contactsA);
         System.out.println(phoneA);
 
+        BusinessContact contactC = new BusinessContact("Carl", "Coca-Cola");
+        BusinessContact contactD = new BusinessContact("Pepsi");
+        Contact[] contactsB = {contactA, contactB, contactC, contactD};
+        Smartphone phoneB = new Smartphone("710", "Nokia", contactsB);
+        System.out.println(phoneB);
     }
 }
