@@ -3,7 +3,7 @@ import model.Contact;
 import model.Friend;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Friend contactA = new Friend("Hans", "987");
         Friend contactB = new Friend();
         System.out.println(contactA);
@@ -24,5 +24,8 @@ public class Main {
         allContacts.addContact(contactA);
         Smartphone phoneC = new Smartphone("710", "Nokia", allContacts.getAllContacts());
         System.out.println(phoneC);
+
+        System.out.println(allContacts.getContactByName("Carl"));
+        System.out.println(allContacts.getContactByName("Cai"));
     }
 }

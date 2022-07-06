@@ -15,6 +15,22 @@ public class ContactStore {
         return allContacts;
     }
 
+    public Contact getContact(int index) {
+        return allContacts[index];
+    }
+
+    public Object getContactByName(String name) {
+        try {
+            Contact contact = Arrays
+                    .stream(this.getAllContacts())
+                    .filter(element -> element.getName().equals(name))
+                    .findFirst().get();
+            return contact.toString();
+        } catch (Exception exception) {
+            return exception;
+        }
+    }
+
     public void setAllContacts(Contact[] allContacts) {
         this.allContacts = allContacts;
     }
