@@ -19,15 +19,15 @@ public class ContactStore {
         return allContacts[index];
     }
 
-    public Object getContactByName(String name) {
+    public Contact getContactByName(String name) {
         try {
             Contact contact = Arrays
                     .stream(this.getAllContacts())
                     .filter(element -> element.getName().equals(name))
                     .findFirst().get();
-            return contact.toString();
+            return contact;
         } catch (Exception exception) {
-            return exception;
+            return null;
         }
     }
 

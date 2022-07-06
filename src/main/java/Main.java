@@ -3,7 +3,7 @@ import model.Contact;
 import model.Friend;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Friend contactA = new Friend("Hans", "987");
         Friend contactB = new Friend();
         System.out.println(contactA);
@@ -25,7 +25,7 @@ public class Main {
         Smartphone phoneC = new Smartphone("710", "Nokia", allContacts.getAllContacts());
         System.out.println(phoneC);
 
-        System.out.println(allContacts.getContactByName("Carl"));
-        System.out.println(allContacts.getContactByName("Cai"));
+        System.out.println(allContacts.getContactByName("Carl")!= null ? allContacts.getContactByName("Cai") : "Contact not found");
+        System.out.println(allContacts.getContactByName("Cai") != null ? allContacts.getContactByName("Cai") : "Contact not found");
     }
 }
